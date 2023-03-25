@@ -59,12 +59,6 @@ Ao acessar a página, preencha o nome e a senha da sua rede WiFi e clique no bot
 
 
 
-
-Feito com ❤️ e desenvolvido no Visual Studio Code.
-
-
-
-
 ## Como contribuir
 
 1. Clone o repositório
@@ -74,14 +68,5 @@ Feito com ❤️ e desenvolvido no Visual Studio Code.
 5. Abra um Pull Request
 
 
-
-
-
-## Licença
-
-Este projeto está sob a licença MIT. Consulte o arquivo de [LICENSE](LICENSE.md) para mais detalhes.
-
-
-
-
+Feito com ❤️ e desenvolvido no Visual Studio Code.
 
