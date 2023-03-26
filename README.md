@@ -73,7 +73,7 @@ Ao acessar a página, preencha o nome e a senha da sua rede WiFi e clique no bot
 
 
 
-## Como contribuir
+## 🙋 Como contribuir
 
 1. Clone o repositório
 2. Crie uma branch (`git checkout -b feature/sua-feature`)
