@@ -35,7 +35,7 @@ Para executar o projeto, é necessário ter Python instalado em sua máquina.
 Para instalar as bibliotecas necessárias, abra o terminal e execute o seguinte comando:
 
 <pre class="command">
-`pip install -r requirements.txt`
+`pip install flask`
 </pre>
 
 
