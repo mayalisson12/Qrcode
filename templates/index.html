@@ -3,6 +3,60 @@
 
 <head>
     <title>Gerador de QR Code para WiFi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .password-wrapper {
+            display: flex;
+            align-items: center;
+        }
+
+        .password-toggle {
+            position: relative;
+        }
+
+        .password-toggle input {
+            padding-right: 30px;
+        }
+
+        .password-toggle button {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            background-color: transparent;
+            border: none;
+            color: #007bff;
+            cursor: pointer;
+        }
+
+        .password-toggle button:hover {
+            text-decoration: underline;
+        }
+
+        .password-toggle button:active {
+            transform: translateY(-50%) scale(0.95);
+        }
+
+        .password-toggle button:focus {
+            outline: none;
+        }
+    </style>
+    <script>
+        function togglePasswordVisibility() {
+            var passwordInput = document.getElementById("password");
+            var toggleButton = document.getElementById("toggle-button");
+            
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                toggleButton.innerHTML = '<i class="far fa-eye-slash"></i> Ocultar';
+            } else {
+                passwordInput.type = "password";
+                toggleButton.innerHTML = '<i class="far fa-eye"></i> Mostrar';
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -11,7 +65,13 @@
         <label for="ssid">Nome da rede WiFi:</label>
         <input type="text" id="ssid" name="ssid"><br><br>
         <label for="password">Senha da rede WiFi:</label>
-        <input type="password" id="password" name="password"><br><br>
+        <div class="password-wrapper">
+            <div class="password-toggle">
+                <input type="password" id="password" name="password">
+                <button type="button" id="toggle-button" onclick="togglePasswordVisibility()"><i class="far fa-eye"></i> Mostrar</button>
+            </div>
+        </div>
+        <br><br>
         <input type="submit" value="Gerar QR Code">
     </form>
 </body>

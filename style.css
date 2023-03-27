@@ -1,0 +1,8 @@
+.command {
+    background-color: #242424;
+    color: #fff;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 5px;
+  }
