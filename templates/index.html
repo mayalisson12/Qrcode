@@ -3,10 +3,76 @@
 
 <head>
     <title>Gerador de QR Code para WiFi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geo&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #404040;
+            font-family: 'Inter', sans-serif;
+        }
+
+        #login-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: 563px;
+            background: #FFFFFF;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+            padding: 50px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 50px;
+            font-family: monospace;
+        }
+
+        #nome {
+            display: block;
+            font-family: monospace;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 26px;
+            line-height: 39px;
+        }
+        label{
+            display: block;
+            font-family: monospace;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 26px;
+            line-height: 39px;
+        }
+
+        #ssid {
+            width: 198px;
+            width: 100%;
+            height: 50px;
+            padding: 10px;
+            border: none;
+            border-radius: 1px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            box-sizing: border-box;
+            background: #D9D9D9;
+        }
+
+
         .password-wrapper {
             display: flex;
             align-items: center;
@@ -17,7 +83,17 @@
         }
 
         .password-toggle input {
-            padding-right: 30px;
+            width: 400px;
+
+
+            height: 50px;
+            padding: 10px;
+            border: none;
+            border-radius: 1px;
+            margin-bottom: 2px;
+            font-size: 16px;
+            box-sizing: border-box;
+            background: #D9D9D9;
         }
 
         .password-toggle button {
@@ -27,7 +103,7 @@
             transform: translateY(-50%);
             background-color: transparent;
             border: none;
-            color: #007bff;
+            color: #1748bb;
             cursor: pointer;
         }
 
@@ -42,12 +118,37 @@
         .password-toggle button:focus {
             outline: none;
         }
+
+        .butaozin {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 11px 22px;
+            gap: 12px;
+            position: relative;
+            width: 55%;
+            height: 51px;
+            background: #191D21;
+            color: #FFFFFF;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 5.5px;
+            border: none;
+            cursor: pointer;
+            margin-left: 21.5%;
+            margin-top: 12px;
+        }
+
+        .butaozin:hover {
+            background: #1748bb;
+        }
     </style>
     <script>
         function togglePasswordVisibility() {
             var passwordInput = document.getElementById("password");
             var toggleButton = document.getElementById("toggle-button");
-            
+
             if (passwordInput.type === "password") {
                 passwordInput.type = "text";
                 toggleButton.innerHTML = '<i class="far fa-eye-slash"></i> Ocultar';
@@ -60,20 +161,28 @@
 </head>
 
 <body>
-    <h1>Gerador de QR Code para WiFi</h1>
-    <form method="POST" action="/qrcode">
-        <label for="ssid">Nome da rede WiFi:</label>
-        <input type="text" id="ssid" name="ssid"><br><br>
-        <label for="password">Senha da rede WiFi:</label>
-        <div class="password-wrapper">
-            <div class="password-toggle">
-                <input type="password" id="password" name="password">
-                <button type="button" id="toggle-button" onclick="togglePasswordVisibility()"><i class="far fa-eye"></i> Mostrar</button>
+    <div id="login-box">
+        <h1>Gerador de <span
+                style="color: rgb(255, 255, 255);-webkit-text-stroke-width: 2px;-webkit-text-stroke-color: #070707;margin-left: -2px;margin-right: 5px;">QR-Code</span>para
+            <span style="font-family: Geo, sans-serif;font-size: 38px;color: #1748bb;">Wifi</span>
+        </h1>
+
+        <form method="POST" action="/qrcode">
+            <label id="nome" for="ssid">Nome da rede:</label>
+            <input type="text" id="ssid" name="ssid" placeholder="minharede"><br><br>
+            <label for="password" >Senha:</label>
+            <div class="password-wrapper">
+                <div class="password-toggle">
+                    <input type="password" id="password" name="password" placeholder="minhasenha123">
+                    <button type="button" id="toggle-button" onclick="togglePasswordVisibility()"><i
+                            class="far fa-eye"></i>
+                        Mostrar</button>
+                </div>
             </div>
-        </div>
-        <br><br>
-        <input type="submit" value="Gerar QR Code">
-    </form>
+            <br><br>
+            <input class="butaozin" type="submit" value="Gerar QR Code">
+        </form>
+    </div>
 </body>
 
 </html>
