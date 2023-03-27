@@ -60,6 +60,12 @@ Para iniciar o servidor, abra o Prompt de Comando (Windows) ou o Terminal (Mac/L
 `flask run`
 </pre>
 
+OU
+
+<pre class="command">
+`python gerar_qrcode.py`
+</pre>
+
 Se tudo ocorrer corretamente, você verá a seguinte mensagem:
 <pre class="command">
 `Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)`
