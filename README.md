@@ -45,6 +45,13 @@ Para executar o servidor Flask, execute o seguinte comando:
 `python app.py`
 </pre>
 
+Instale também a biblioteca fontawesome-free para carregar o botao de mostrar a senha:
+
+<pre class="command">
+`pip install fontawesome-free`
+</pre>
+
+
 
 ### 🚀 Iniciando o servidor
 
